@@ -96,7 +96,6 @@ class ResourceGeneratorController extends Controller
             'error' => true,
             'message' => 'errors exists!'
         ], 200);
-        dd();
         return $this->service->generateResourceFile($data, $namespace, $model, $resource);
     }
 
