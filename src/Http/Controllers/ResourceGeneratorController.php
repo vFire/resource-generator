@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use vFire\ResourceGenerator\Http\Services\Settings;
 use vFire\ResourceGenerator\Http\Services\GeneratorFunctions;
 use vFire\ResourceGenerator\Http\Services\ResourceGeneratorService;
+use vFire\ResourceGenerator\Models\Module;
 
 class ResourceGeneratorController extends Controller
 {
@@ -79,6 +80,23 @@ class ResourceGeneratorController extends Controller
      */
     public function generateResource($data, $namespace, $model, $resource)
     {
+        if($data->id){
+            $record = Module::find($data->id);
+        }else{
+            $record = new Module;
+        }
+        $record->table = $data->table;
+        $record->singular = $data->singular;
+        $record->title = $data->title;
+        $record->search = implode(',', $data->search);
+        $record->createModel = $data->createModel;
+        $record->columns = json_encode($data->columns);
+        $record->save();
+        return response()->json([
+            'error' => true,
+            'message' => 'errors exists!'
+        ], 200);
+        dd();
         return $this->service->generateResourceFile($data, $namespace, $model, $resource);
     }
 

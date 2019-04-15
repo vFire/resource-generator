@@ -59,7 +59,7 @@ class ResourceGeneratorServiceProvider extends ServiceProvider
     private function checkSettingsFile()
     {
         $settingsFile = storage_path('nova-resource-generator.json');
-        if (! file_exists($settingsFile)) {
+        if (!file_exists($settingsFile)) {
             $settings = file_get_contents(__DIR__.'/../settings.json');
 
             file_put_contents($settingsFile, $settings);

@@ -5,7 +5,7 @@
         </h1>
 
         <h1 class="mb-3 text-90 font-normal text-2xl" v-if="step == 2">
-            {{ __('Creating new Resource') }} 
+            {{ __('Creating new Resource') }}
         </h1>
 
         <div class="card" v-if="step == 2">
@@ -34,7 +34,7 @@
         </div>
 
         <h1 class="mb-3 text-90 font-normal text-2xl" v-if="step == 2">
-            {{ __('Fields') }} 
+            {{ __('Fields') }}
         </h1>
 
 
@@ -103,7 +103,7 @@
                                 </label>
                             </div>
                             <div class="w-1/2 px-8 py-6">
-                               
+
 
                                 <multiselect v-show="fieldsObject.length > 0" v-model="search" :options="fieldsObject" :multiple="true" :searchable="true" :close-on-select="false" :show-labels="false" :placeholder="__('Choose field/s')"></multiselect>
 
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="w-full flex flex-wrap">
                         <div class="w-1/5 px-8 py-6">
                             <label class="inline-block text-80 pt-2 leading-tight" for="generate_model">
