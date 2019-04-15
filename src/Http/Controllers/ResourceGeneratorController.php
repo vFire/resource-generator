@@ -79,6 +79,7 @@ class ResourceGeneratorController extends Controller
      */
     public function generateResource($data, $namespace, $model, $resource)
     {
+        dd($data);
         return $this->service->generateResourceFile($data, $namespace, $model, $resource);
     }
 
