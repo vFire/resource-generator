@@ -1,0 +1,44 @@
+{
+    "name": "vfire/resource-generator",
+    "description": "Resource Generator for Laravel Nova",
+    "keywords": [
+        "resource",
+        "generator",
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vFire",
+            "email": "vFire@qq.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "laravel/nova": "*",
+        "doctrine/dbal": "^2.8"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "vFire\\ResourceGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "vFire\\ResourceGenerator\\ResourceGeneratorServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
