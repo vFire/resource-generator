@@ -1,6 +1,6 @@
 {
     "name": "vfire/resource-generator",
-    "description": "Resource Generator for Laravel Nova",
+    "description": "Resource Generator",
     "keywords": [
         "resource",
         "generator",
