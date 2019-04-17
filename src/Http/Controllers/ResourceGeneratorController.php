@@ -92,11 +92,9 @@ class ResourceGeneratorController extends Controller
         $record->createModel = $data->createModel;
         $record->columns = json_encode($data->columns);
         $record->save();
-        return response()->json([
-            'error' => true,
-            'message' => 'errors exists!'
-        ], 200);
-        return $this->service->generateResourceFile($data, $namespace, $model, $resource);
+        //return response()->json(['success' => true]);
+        return response()->json(['message' => 'Error: Generation on hold temporary!'], 500);
+        //return $this->service->generateResourceFile($data, $namespace, $model, $resource);
     }
 
     /**
@@ -116,10 +114,10 @@ class ResourceGeneratorController extends Controller
         $namespace = $this->setting->value('namespace');
         $resource = $this->setting->value('resource');
 
-        $this->generateResource($request, $this->getNamespace(), $namespace, $resource);
+        return $this->generateResource($request, $this->getNamespace(), $namespace, $resource);
 
-        if ($request['createModel']):
-            $this->generateModel($request, $namespace);
-        endif;
+        // if ($request['createModel']):
+        //     $this->generateModel($request, $namespace);
+        //endif;
     }
 }

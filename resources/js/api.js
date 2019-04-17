@@ -1,12 +1,12 @@
 export default {
     getTables() {
-        return window.axios
+        return Nova.request()
             .post('/nova-vendor/resource-generator/get-tables')
             .then(response => response.data);
     },
 
     getColumns(table) {
-        return window.axios
+        return Nova.request()
             .post('/nova-vendor/resource-generator/get-columns', {
                 table: table,
             })
@@ -14,7 +14,7 @@ export default {
     },
 
     checkFiles(createModel, singular) {
-        return window.axios
+        return Nova.request()
             .post('/nova-vendor/resource-generator/check-file', {
                 createModel: createModel,
                 singular: singular,
@@ -23,7 +23,7 @@ export default {
     },
 
     generateResources(table, singular, title, search, createModel, columns) {
-        return window.axios
+        return Nova.request()
             .post('/nova-vendor/resource-generator/generate-resource', {
                 table: table,
                 singular: singular,
@@ -36,13 +36,13 @@ export default {
     },
 
     getSettings() {
-        return window.axios
+        return Nova.request()
             .get('/nova-vendor/resource-generator/settings-get')
             .then(response => response.data);
     },
 
     saveSettings(settings) {
-        return window.axios
+        return Nova.request()
             .post('/nova-vendor/resource-generator/settings-set', {
                 settings: settings,
             })
@@ -50,7 +50,7 @@ export default {
     },
 
     resetSettings() {
-        return window.axios
+        return Nova.request()
             .post('/nova-vendor/resource-generator/settings-reset')
             .then(response => response.data);
     },
